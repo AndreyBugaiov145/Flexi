@@ -12,8 +12,8 @@
 			<li><a href="task4.php">task4</a></li>
 			<li><a href="task6.php">task6</a></li>
 			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="task8.php">task8</a></li>
+			<li><a href="task9.php">task9</a></li>
 			<li><a href="#"></a></li>
 			<li><a href="#"></a></li>
 			<li><a href="#"></a></li>

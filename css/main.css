@@ -28,3 +28,14 @@ div.tasks{
 	width: 700px;
 	background-color: #f3f3f3;
 }
+
+/*task8*/
+.form1{
+	font-size: 1.3em;
+}
+.form1 input{
+	margin:  10px;
+}
+span{
+	margin: 10px;
+}
