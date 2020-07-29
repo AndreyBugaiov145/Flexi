@@ -14,13 +14,13 @@
 			<label for="password">Введите пароль</label><input type="password" name="password" id="password">
 			<input type="submit" name="submit">
 		</form>
-		<?php if($_POST["submit"]) : ?>
-		<div>
-			<span>Ваше имя : <?=$_POST["name"]?></span>
-			<br>
-			<span>Ваш пороль : <?=$_POST["password"]?></span>
-		</div>
-		<?php endif?>
+		<?php if($_POST["submit"]):?>
+			<div>
+				<span>Ваше имя : <?=$_POST["name"]?></span>
+				<br>
+				<span>Ваш пороль : <?=$_POST["password"]?></span>
+			</div>
+		<?php endif;?>
 	</div>
 </body>
 </html>
