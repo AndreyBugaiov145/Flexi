@@ -9,12 +9,12 @@
 </head>
 <body>
 	<div class="tasks">
-		<form action="" method="post" class="form1">
+		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" class="form1">
 			<label for="name">Введите ваше имя</label><input type="text" name="name" id="name"><br>
 			<label for="password">Введите пароль</label><input type="password" name="password" id="password">
 			<input type="submit" name="submit">
 		</form>
-		<?php if($_POST["submit"]):?>
+		<?php if(isset($_POST["submit"])):?>
 			<div>
 				<span>Ваше имя : <?=$_POST["name"]?></span>
 				<br>
