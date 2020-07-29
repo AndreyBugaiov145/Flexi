@@ -10,8 +10,8 @@
 		<h1>Список заданий</h1>
 		<ul>
 			<li><a href="task4.php">task4</a></li>
-			<li><a href="task6.php">task6</a></li>
-			<li><a href="#"></a></li>
+			<li><a href="task6.php">task6(параметры функции задыються в файле task6.php )</a></li>
+			<li><a href="task7.php">task7(параметры функции задыються в файле task7.php )</a></li>
 			<li><a href="task8.php">task8</a></li>
 			<li><a href="task9.php">task9</a></li>
 			<li><a href="#"></a></li>
