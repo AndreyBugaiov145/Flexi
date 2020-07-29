@@ -1,11 +1,14 @@
 <?php
 function getNumber($a,$b)
 {	
-	(//$a-$b)?
+	if($a>$b){
+		return "первое число больше на ".($a/$b*100-100)."%";
+	}else if($a === $b){
+		return "число равны";
+	}else{
+		return "второе число больше на ".($b/$a*100-100)."%";
+	}
+
 }
-if (-5) {
-	echo "-5";
-	exit;
-}
-echo"dont wirk";
+echo getNumber(4,8);
 ?>
