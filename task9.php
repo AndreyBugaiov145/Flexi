@@ -10,7 +10,7 @@
 		<h3>Сооздание файла</h3>
 		<form action="serverTask9.php" method="POST" class="form1"> 
 			<label for="text">ведите текст котрый будет записан в новый файл</label><br>
-			<input type="text" id="text">
+			<input type="text" id="text" name="text">
 			<input type="submit" value="создать текстовый файл"> 
 		</form>
 	</div>
