@@ -1,6 +1,8 @@
 <?php
 function getNumber($a,$b)
-{	
+{	if($a===0||$b===0){
+	return "невозмодно вычеслить разницу в процентах,один из операндов равен 0";
+	}
 	if($a>$b){
 		return "первое число больше на ".($a/$b*100-100)."%";
 	}else if($a === $b){
@@ -10,5 +12,5 @@ function getNumber($a,$b)
 	}
 
 }
-echo getNumber(4,8);
+echo getNumber(10,0);
 ?>
