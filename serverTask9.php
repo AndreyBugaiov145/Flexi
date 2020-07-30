@@ -1,10 +1,11 @@
 <?php
-	$file = fopen("task6.php","r");
-	//fwrite($file,$_POST['text']);
-	echo fread($file,500);
-	/*while (!feof($file)) {
-		echo fread($file,500);
-	}*/
+	$file = fopen("task6.php","a+");
+	fwrite($file,$_POST['text']);
+	echo fread($file,500)."<br>";
+	fseek($file, 0);
+	while (!feof($file)) {
+		echo fread($file,3);
+	}
 	fclose($file);
 
 //               1
