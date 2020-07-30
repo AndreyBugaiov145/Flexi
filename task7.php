@@ -5,20 +5,22 @@ function FunctionName()
 	$type=null;
 	$args = func_get_args ();
 
-	//проходимся по массиву аргументов и проверяем типп данных
 	foreach ($args as $val ) {
 	$type = $type?$type : gettype($val);
 	$rez = ($type===gettype($val)&&$rez)?true :false;
 	}
-	// выводим результат
+
 	if($rez){
-		return "Все хорошо типы данных совпадают";
+		echo "Все хорошо типы данных совпадают<br>";
 	}else{
-		foreach ($args as $val ) {
-			$val.="";
+		for ($i=0; $i < count($args); $i++) { 
+			//$args[$i] .="";
+			$args[$i]=strval($args[$i]);
 		}
-		return " Ошибка .Типы данных были приведены к строчному типу ";
+		echo "Ошибка .Типы данных были приведены к строчному типу<br>";
 	}
+	return $args;
 }
-echo(FunctionName(15,"15",87));
+var_dump(FunctionName(15,"2",87));
+
 ?>
