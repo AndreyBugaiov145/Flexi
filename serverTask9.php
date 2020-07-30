@@ -1,6 +1,6 @@
 <?php
-	$file = fopen("text.txt","r");
-	fwrite($file,$_POST['text']);
+	$file = fopen("task4.php","r");
+	//fwrite($file,$_POST['text']);
 	echo fread($file,500);
 	/*while (!feof($file)) {
 		echo fread($file,500);
