@@ -1,5 +1,5 @@
 <?php
-	$file = fopen("task6.php","a+");
+	$file = fopen("text.txt","a+");
 	fwrite($file,$_POST['text']);
 	echo fread($file,500)."<br>";
 	fseek($file, 0);
