@@ -1,5 +1,5 @@
 <?php
-	$file = fopen("text.txt","a+");
+	$file = fopen("text.txt","r");
 	fwrite($file,$_POST['text']);
 	echo fread($file,500);
 	/*while (!feof($file)) {
