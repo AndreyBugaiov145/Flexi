@@ -1,5 +1,5 @@
 <?php
-	$file = fopen("task4.php","r");
+	$file = fopen("task6.php","r");
 	//fwrite($file,$_POST['text']);
 	echo fread($file,500);
 	/*while (!feof($file)) {
