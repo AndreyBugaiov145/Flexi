@@ -2,7 +2,7 @@
 	$file = fopen("text.txt","a+");
 	fwrite($file,$_POST['text']);
 	
-	while (feof($file)) {
+	while (!feof($file)) {
 		echo fread($file,2);
 	}
 	fclose($file);
