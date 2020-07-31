@@ -32,8 +32,9 @@
 				<span>Ваше имя : <?=$_POST["name"]?></span>
 				
 				<span>Ваш пороль : <?=$_POST["password"]?></span>
-				<span>Ваш Skill : <? foreach ($_POST["checkbox"] as $value) {
-					echo $value." ,";
+				<span>Ваш Skill : <? foreach ($_POST["checkbox"] as $key => $value) {
+					if($key==0){echo $value;}
+					else echo " ,".$value;
 				}?></span>
 				<span>Ваш пол : <?=$_POST["select"]?></span>
 			</div>
