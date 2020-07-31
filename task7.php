@@ -4,6 +4,7 @@ function FunctionName()
 	$rez =true;
 	$type=null;
 	$args = func_get_args ();
+	$ansver;
 
 	foreach ($args as $val ) {
 	$type = $type?$type : gettype($val);
@@ -11,15 +12,15 @@ function FunctionName()
 	}
 
 	if($rez){
-		echo "Все хорошо типы данных совпадают<br>";
+		$ansver="Все хорошо типы данных совпадают<br>";
 	}else{
 		for ($i=0; $i < count($args); $i++) { 
 			//$args[$i] .="";
 			$args[$i]=strval($args[$i]);
 		}
-		echo "Ошибка .Типы данных были приведены к строчному типу<br>";
+		$ansver= "Ошибка .Типы данных были приведены к строчному типу<br>";
 	}
-	return $args;
+	return $ansver.$args;
 }
 var_dump(FunctionName(15,"2",87));
 
