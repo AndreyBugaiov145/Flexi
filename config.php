@@ -11,7 +11,8 @@
 	$bd = 'tasks';
 */
 
-	$misqli = new mysqli('91.239.235.118', 'bugaiovandrey' ,'sdfsdfsklk3333','test' );
+	$misqli = new mysqli('91.239.235.118', 'bugaiovandrey' ,'sdfsdfsklk3333','information_schema
+' );
 	$misqli->query("SET NAMES 'utf8'");
 /*
 	$sucses = $misqli->query("SELECT * FROM `Product` ORDER BY product "); 
