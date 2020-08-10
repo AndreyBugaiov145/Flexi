@@ -4,6 +4,7 @@
 node_modules/
 # ignore log files and databases
 *.iml
-/*.txt
+*.txt
 *.log
 confige.php
+/conf/
