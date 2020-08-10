@@ -22,6 +22,7 @@
 			<li><a href="task14.php">task14</a></li>
 			<li><a href="task15.php">task15</a></li>
 			<li><a  href="task16.php">task16</a></li>
+			<li><a  href="task17.php">task17</a></li>
 		</ul>
 	</div>
 	<script src="js/js.js"></script>
