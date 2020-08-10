@@ -14,7 +14,7 @@
 	$misqli = new mysqli($host, $login ,$password,$bd );
 
 	$misqli->query("SET NAMES 'utf8'");
-/*
+
 	$sucses = $misqli->query("SELECT * FROM `Product` ORDER BY product "); 
 	function get($ar)
 	{	$arr = array();
@@ -25,6 +25,6 @@
 	}
 		 $arr =get($sucses);
 		 var_dump($arr);
-*/
+
 	$misqli->close();
 ?>
