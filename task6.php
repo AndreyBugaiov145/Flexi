@@ -10,12 +10,11 @@ function getNumber($a,$b)
 		return "число равны";
 	}else{
 		if($a===0||$b===0){
-			$rez = 10*abs($a-$b);
 			return "первое число больше на 100%";
 		}
 		return "второе число больше на ".($b/$a*100-100)."%";
 	}
 
 }
-echo getNumber(0,32);
+echo getNumber(32,0);
 ?>
