@@ -1,5 +1,5 @@
 <?php
-if ($_GET['submit']){
+if (isset($_GET['submit'])){
   require 'config.php';
   $misqli = new mysqli($host, $login ,$password,$bd );
   $misqli->query("SET NAMES 'utf8'");
