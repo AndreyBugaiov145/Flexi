@@ -13,16 +13,16 @@ if(isset($_FILES['file'])){
 	echo "<br> file_name =  ".$file_name ;
 	echo "<br> file_size =  ".$file_size ;
 	echo "<br> file_tmp =  ".$file_tmp ;
-	echo "<br> file_type =  ".(explode("/",$file_type)[0] ;
+	echo "<br> file_type =  ".$file_type ;
 	echo "<br> file_ext =  ".$file_ext ;
 	echo "<br>";
 	echo "<br>";
 	print_r($_FILES['file']);
 
 	move_uploaded_file($file_tmp, $file_name);
-	/*if ((explode("/",$file_type ))[0]) {
-		# code...
-	}*/
+	if ((explode("/",$file_type ))[0] === 'image') {
+		echo "<img src='{$file_name}'>";
+	}
 }
 
 var_dump($_FILES['file']);
