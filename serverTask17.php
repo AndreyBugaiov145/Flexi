@@ -10,7 +10,7 @@ if(isset($_FILES['file'])){
 	move_uploaded_file($file_tmp, "$img/$file_name");
 
 	if ((explode("/",$file_type ))[0] === 'image') {
-		echo "<img src='{$file_name}'>";
+		echo "<img src='img/{$file_name}'>";
 	}else{
 		echo "string";
 	}
