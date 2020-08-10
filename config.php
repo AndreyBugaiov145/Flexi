@@ -1,6 +1,6 @@
 <?php
 
-	$host = '91.239.235.118';
+	$host = 'localhost';
 	$login = 'bugaiovandrey';
 	$password = 'sdfsdfsklk3333';
 	$bd = 'test';
