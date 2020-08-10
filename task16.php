@@ -13,7 +13,7 @@ if (isset($_GET['submit'])){
 		}
 		$arr =get($sucses);
 	foreach ($arr as  $value) {
-			echo "Имя --".$value['name']."    Датф рождения = ".$value['date']."<br/>";
+			echo "Имя --".$value['name']."//   Датa рождения = ".$value['date']."<br/>";
 		}	
 
 	$misqli->close();
