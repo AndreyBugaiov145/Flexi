@@ -1,6 +1,6 @@
 <?php
 
-	$host = 'http://91.239.235.118/';
+	$host = '91.239.235.118';
 	$login = 'bugaiovandrey';
 	$password = 'sdfsdfsklk3333';
 	$bd = 'test';
