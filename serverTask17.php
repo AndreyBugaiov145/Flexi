@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_FILES['file'])){
-	$img = "/img";
+	$img = "img";
 	$file_name = $_FILES['file']["name"];
 	$file_size = $_FILES['file']["size"];
 	$file_tmp = $_FILES['file']["tmp_name"];
