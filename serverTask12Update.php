@@ -1,6 +1,7 @@
 <?php
 
-$misqli = new mysqli("localhost" , "root" ,"flexi140","tasks");
+require 'config.php';
+$misqli = new mysqli($host, $login ,$password,$bd );
 $misqli->query("SET NAMES 'utf8'");
 $sucses = $misqli->query("UPDATE `Product` SET `product`='{$_POST['product']}',`price`='{$_POST['price']}',`short_description`='{$_POST['short_description']}',`userId`='{$_POST['select']}' WHERE `id`={$_COOKIE["id"]}"); 
 

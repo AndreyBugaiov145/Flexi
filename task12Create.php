@@ -1,5 +1,6 @@
 <?php
-$misqli = new mysqli("localhost" , "root" ,"flexi140","tasks");
+require 'config.php';
+$misqli = new mysqli($host, $login ,$password,$bd );
 $misqli->query("SET NAMES 'utf8'");
 
 $sucses = $misqli->query("SELECT * FROM `users`"); 

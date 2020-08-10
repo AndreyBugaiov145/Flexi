@@ -1,5 +1,7 @@
 <?php
-	$misqli = new mysqli("localhost" , "root" ,"flexi140","tasks");
+	require 'config.php';
+	$misqli = new mysqli($host, $login ,$password,$bd );
+	//$misqli = new mysqli("localhost" , "root" ,"flexi140","tasks");
 	$misqli->query("SET NAMES 'utf8'");
 
 		$sucses = $misqli->query("SELECT * FROM `Product` ORDER BY product "); 
