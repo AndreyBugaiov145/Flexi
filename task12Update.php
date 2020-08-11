@@ -54,7 +54,7 @@ $misqli = new mysqli($host, $login ,$password,$bd );
 			<label for="">Выбериет владельца продукта</label><br>
 			<select name="select" id="select">
 				<?php foreach($arr as $val):?>
-					<option value="<? echo $val['id']?>"><? echo $val['name']?></option>
+					<option value="<? echo $val['id']?>"  <?php if($row['userId'] ===$val['id']){echo "selected";}?>  > <? echo $val['name']?></option>
 				<?php endforeach;?>
 			</select><br><br>
 			<label for="short_description">Введите краткое описане</label><br>
