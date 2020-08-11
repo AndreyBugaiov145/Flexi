@@ -1,9 +1,11 @@
 <?php
 if (isset($_GET['submit'])){
   require 'config.php';
+  $date_from = "0-".$_GET['date_from'];
+  $date_to = "99999-".$_GET['date_to'];
   $misqli = new mysqli($host, $login ,$password,$bd );
   $misqli->query("SET NAMES 'utf8'");
-	$sucses = $misqli->query("SELECT `name` , `date` FROM `task16` WHERE  `date`>'{$_GET['date_from']}' AND `date`<'{$_GET['date_to']}'  "); 
+	$sucses = $misqli->query("SELECT `name` , `date` FROM `task16` WHERE  `date`>'{$date_from}' AND `date`<'{$date_to}'"); 
 	function get($ar)
 		{	$arr = array();
 			while(($row = $ar->fetch_assoc())!=false){
@@ -33,10 +35,10 @@ if (isset($_GET['submit'])){
   <script>
   	$( function() {
     $( "#date_from" ).datepicker({
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'mm-dd'
     });
      $( "#date_to" ).datepicker({
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'mm-dd'
     });
   });  
   
