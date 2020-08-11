@@ -9,7 +9,7 @@ if (isset($_GET['submit'])){
   }
   $misqli = new mysqli($host, $login ,$password,$bd );
   $misqli->query("SET NAMES 'utf8'");
-  $sucses = $misqli->query("SELECT `name` , `date` FROM `task16` "); 
+  $sucses = $misqli->query("SELECT `name` , `date` FROM `task16` ORDER BY `date` "); 
 	function get($ar)
 		{	$arr = array();
 			while(($row = $ar->fetch_assoc())!=false){
