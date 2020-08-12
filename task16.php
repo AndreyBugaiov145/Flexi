@@ -3,13 +3,16 @@ if (isset($_GET['submit'])){
   require 'config.php';
   $date_from = $_GET['date_from'];
   $date_to = $_GET['date_to'];
+
   if($date_from>$date_to){
     echo "неверный выбор даты<a href='task16.php'> попробовать снова<a>";
     exit;
   }
   $misqli = new mysqli($host, $login ,$password,$bd );
   $misqli->query("SET NAMES 'utf8'");
-  $sucses = $misqli->query("SELECT `name` , `date` FROM `task16` ORDER BY `date` "); 
+
+  $sucses = $misqli->query("SELECT `name` , `date` FROM `task16` WHERE DATE_FORMAT(date, '%m-%d') > '{$date_from}' AND DATE_FORMAT(date, '%m-%d') < '{$date_to}' ORDER BY `date` "); 
+
 	function get($ar)
 		{	$arr = array();
 			while(($row = $ar->fetch_assoc())!=false){
@@ -18,29 +21,10 @@ if (isset($_GET['submit'])){
 			return $arr;
 		}
 	$arr =get($sucses);
-  function cheackData($date,$date_from,$date_to)
-  {
-    $date = explode("-",$date);
-    $date_from = explode("-",$date_from);
-    $date_to = explode("-",$date_to);
-  
-    if($date[1]>$date_from[0]&&$date[1]<$date_to[0]){
-        return true;
-    }else if(($date[1]===$date_from[0]&&$date_from[0]===$date_to[0]&&$date[2]>$date_from[1]&&$date[2]<$date_to[1])||($date[1]===$date_from[0]&&$date_from[0]!=$date_to[0]&&$date[2]>$date_from[1])){
-        return true;
-    }else if($date[1]===$date_to[0]&&$date[2]<$date_to[1]){
-      return true;
-    }
-    return false;
+  foreach ($arr as  $value){
+    echo "Имя --".$value['name']."//   Датa рождения = ".$value['date']."<br/>";
   }
-	foreach ($arr as  $value) {
-
-    if (cheackData($value['date'],$date_from,$date_to)) {
-     echo "Имя --".$value['name']."//   Датa рождения = ".$value['date']."<br/>";
-    }
-			
-		}	
-
+ 
 	$misqli->close();
 }
 ?>
