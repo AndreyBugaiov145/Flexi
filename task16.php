@@ -24,7 +24,7 @@ if (isset($_GET['submit'])){
   foreach ($arr as  $value){
     echo "Имя --".$value['name']."//   Датa рождения = ".$value['date']."<br/>";
   }
- 
+
 	$misqli->close();
 }
 ?>
