@@ -26,6 +26,7 @@
 			<hr><hr>
 			<li><a  href="#">task18(Табилитцы в базе данных [users2 , products , likeProducts]</a></li>
 			<li><a  href="task19.php">task19</a></li>
+			<li><a  href="task20.php">task20</a></li>
 		</ul>
 	</div>
 	<script src="js/js.js"></script>
