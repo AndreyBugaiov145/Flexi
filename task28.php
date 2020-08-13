@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 			$matrix2[$i][$j] = isset($matrix2[$i][$j])?$matrix2[$i][$j]:0;
 			$rezaltMass[$i][$j] = $matrix1[$i][$j]+$matrix2[$i][$j];
 		}
-		$rezaltMass[$i] = implode("", $rezaltMass[$i]);
+		$rezaltMass[$i] = implode(" ", $rezaltMass[$i]);
 	}
 	foreach($mass1 as $v){
 		echo "$v<br>";
