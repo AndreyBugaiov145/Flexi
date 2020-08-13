@@ -11,22 +11,24 @@ if (isset($_POST['submit'])) {
 
 	$matrix1=[];
 	$matrix2=[];
-	$count;
+	$count=0;
 	$rezaltMass=[];
+
 	foreach ($mass1 as $value ) {
-		$matrix1[]=str_split(1*$value);
-		$count= $count>count(str_split(1*$value))?$count:count(str_split(1*$value));
+		$matrix1[]=explode(" ",$value);
+		$count= $count>count(explode(" ",$value))?$count:count(explode(" ",$value));
 	}
 
 	foreach ($mass2 as $value ) {
-		$matrix2[]=str_split(1*$value);
-		$count= $count>count(str_split(1*$value))?$count:count(str_split(1*$value));
+		$matrix2[]=explode(" ",$value);
+		$count= $count>count(explode(" ",$value))?$count:count(explode(" ",$value));
 	}
-	echo "lengthMass = $lengthMass ||| count = $count<br><br>";
+
+	//echo "lengthMass = $lengthMass ||| count = $count<br><br>";
 	for ($i=0; $i <$lengthMass ; $i++) { 
 		for ($j=0; $j <$count ; $j++) { 
-			$matrix1[$i][$j] = $matrix1[$i][$j]?$matrix1[$i][$j]:0;
-			$matrix2[$i][$j] = $matrix2[$i][$j]?$matrix2[$i][$j]:0;
+			$matrix1[$i][$j] = isset($matrix1[$i][$j])?$matrix1[$i][$j]:0;
+			$matrix2[$i][$j] = isset($matrix2[$i][$j])?$matrix2[$i][$j]:0;
 			$rezaltMass[$i][$j] = $matrix1[$i][$j]+$matrix2[$i][$j];
 		}
 		$rezaltMass[$i] = implode("", $rezaltMass[$i]);
