@@ -32,6 +32,8 @@
 			<li><a  href="task23.php">task23</a></li>
 			<li><a  href="task24.php">task24</a></li>
 			<li><a  href="task25.php">task25</a></li>
+			<li><a  href="task26.php">task26</a></li>
+			<li><a  href="task27.php">task27</a></li>
 		</ul>
 	</div>
 	<script src="js/js.js"></script>
