@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,14 +23,25 @@
 			$file_name = $_FILES['file']["name"];
 			$file_tmp = $_FILES['file']["tmp_name"];
 			$file_type = $_FILES['file']["type"];
-
+			move_uploaded_file($file_tmp, "$load/$file_name");
+			$name[]=$file_name;
+			$tmp[]=$file_tmp;
+			$type[] =$file_type ;
+			for ($i=0; $i < count($tmp[]); $i++) { 
+				if ((explode("/",$type[$i] ))[0] === 'image') {
+				echo "<img style='width:300px,height:300px' src='load/{$name[$i]}'>";
+			}else{
+				echo "<a href='load/{$name[$i]}' download>Скачать файл</a>";
+				}
+			}
+/*
 			move_uploaded_file($file_tmp, "$load/$file_name");
 
 			if ((explode("/",$file_type ))[0] === 'image') {
 				echo "<img style='width:300px,height:300px' src='load/{$file_name}'>";
 			}else{
 				echo "<a href='load/{$file_name}' download>Скачать файл</a>";
-			}
+			}*/
 		}
 	}
 ?>
