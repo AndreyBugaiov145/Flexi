@@ -27,7 +27,7 @@
 			$name[]=$file_name;
 			$tmp[]=$file_tmp;
 			$type[] =$file_type ;
-			for ($i=0; $i < count($tmp[]); $i++) { 
+			for ($i=0; $i < count($tmp); $i++) { 
 				if ((explode("/",$type[$i] ))[0] === 'image') {
 				echo "<img style='width:300px,height:300px' src='load/{$name[$i]}'>";
 			}else{
