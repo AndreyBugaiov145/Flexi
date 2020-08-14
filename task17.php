@@ -26,7 +26,7 @@
 			move_uploaded_file($file_tmp, "$load/$file_name");
 
 
-		    $dir = "/load/";   //задаём имя директории
+		    $dir = "load/";   //задаём имя директории
 		    if(is_dir($dir)) {   //проверяем наличие директории
 		         echo $dir.' - директория существует;<br>'; 
 		         $files = scandir($dir);    //сканируем (получаем массив файлов)
