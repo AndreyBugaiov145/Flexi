@@ -34,9 +34,9 @@
 		         array_shift($files); // удаляем из массива '..'
 		         for($i=0; $i<sizeof($files); $i++){
 		         	if ((explode(".",$dir.$files[$i] ))[1] === $type[0]||(explode(".",$dir.$files[$i]))[1] === $type[1]||(explode(".",$dir.$files[$i]))[1] === $type[2]) {
-						echo "<img style='width:300px,height:300px' src='load/{$dir.$files[$i]}'>";
+						echo "<img style='width:300px,height:300px' src='load/{$dir}{$files[$i]}'>";
 					}else{
-						echo "<a href='load/{$dir.$files[$i]}' download>Скачать файл</a>";
+						echo "<a href='load/$dir}{$files[$i]}' download>Скачать файл</a>";
 					
 		         }
 		    } 
@@ -51,6 +51,7 @@
 			}*/
 		}
 	}
+	   echo "string";
 ?>
 </body>
 </html>
