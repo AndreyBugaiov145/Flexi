@@ -24,19 +24,19 @@
 			$file_tmp = $_FILES['file']["tmp_name"];
 			$file_type = $_FILES['file']["type"];
 			move_uploaded_file($file_tmp, "$load/$file_name");
-			$name[]=$file_name;
-			$tmp[]=$file_tmp;
-			$type[] =$file_type ;
-			for ($i=0; $i < count($tmp); $i++) { 
-				if ((explode("/",$type[$i] ))[0] === 'image') {
-				echo "<img style='width:300px,height:300px' src='load/{$name[$i]}'>";
-			}else{
-				echo "<a href='load/{$name[$i]}' download>Скачать файл</a>";
-				}
-			}
-/*
-			move_uploaded_file($file_tmp, "$load/$file_name");
 
+
+		    $dir = "/load/";   //задаём имя директории
+		    if(is_dir($dir)) {   //проверяем наличие директории
+		         echo $dir.' - директория существует;<br>'; 
+		         $files = scandir($dir);    //сканируем (получаем массив файлов)
+		         array_shift($files); // удаляем из массива '.'
+		         array_shift($files); // удаляем из массива '..'
+		         for($i=0; $i<sizeof($files); $i++) echo '-файл: <a href="'.$dir.$files[$i].'" title="открыть/скачать файл или страницу">'.$files[$i].'</a>;<br>';  //выводим все файлы
+		    } 
+		    else echo $dir.' -такой директории нет;<br>';
+
+/*
 			if ((explode("/",$file_type ))[0] === 'image') {
 				echo "<img style='width:300px,height:300px' src='load/{$file_name}'>";
 			}else{
