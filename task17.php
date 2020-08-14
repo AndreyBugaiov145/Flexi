@@ -9,6 +9,11 @@
 				margin: 20px;
 				padding: 5px;
 			}
+			.d{
+				float: left;
+				margin: 10px;
+				border-bottom: 2px solid silver;
+			}
 		</style>
 </head>
 <body>
@@ -34,9 +39,9 @@
 		         array_shift($files); // удаляем из массива '..'
 		         for($i=0; $i<sizeof($files); $i++){
 		         	if ((explode(".",$dir.$files[$i] ))[1] === $type[0]||(explode(".",$dir.$files[$i]))[1] === $type[1]||(explode(".",$dir.$files[$i]))[1] === $type[2]) {
-						echo "<img style='width:300px,height:300px' src='{$dir}{$files[$i]}'><br>";
+						echo "<div class='d'><img style='width:300px,height:300px' src='{$dir}{$files[$i]}'></div><br>";
 					}else{
-						echo "<a href='$dir}{$files[$i]}' download>Скачать файл</a><br>";
+						echo "<div class='d'><a href='$dir}{$files[$i]}' download>Скачать файл</a></div><br>";
 					
 		         }
 		    } 
