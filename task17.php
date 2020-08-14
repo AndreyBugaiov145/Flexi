@@ -28,30 +28,21 @@
 
 		    $dir = "load/";   //задаём имя директории
 		    if(is_dir($dir)) {   //проверяем наличие директории
-		         echo $dir.' - директория существует;<br>'; 
+		        // echo $dir.' - директория существует;<br>'; 
 		         $files = scandir($dir);    //сканируем (получаем массив файлов)
 		         array_shift($files); // удаляем из массива '.'
 		         array_shift($files); // удаляем из массива '..'
 		         for($i=0; $i<sizeof($files); $i++){
 		         	if ((explode(".",$dir.$files[$i] ))[1] === $type[0]||(explode(".",$dir.$files[$i]))[1] === $type[1]||(explode(".",$dir.$files[$i]))[1] === $type[2]) {
-						echo "<img style='width:300px,height:300px' src='{$dir}{$files[$i]}'>";
+						echo "<img style='width:300px,height:300px' src='{$dir}{$files[$i]}'><br>";
 					}else{
-						echo "<a href='$dir}{$files[$i]}' download>Скачать файл</a>";
+						echo "<a href='$dir}{$files[$i]}' download>Скачать файл</a><br>";
 					
 		         }
 		    } 
-		}
-		    else echo $dir.' -такой директории нет;<br>';
-
-/*
-			if ((explode("/",$file_type ))[0] === 'image') {
-				echo "<img style='width:300px,height:300px' src='load/{$file_name}'>";
-			}else{
-				echo "<a href='load/{$file_name}' download>Скачать файл</a>";
-			}*/
+		} else echo $dir.' -такой директории нет;<br>';
 		}
 	}
-	   echo "string";
 ?>
 </body>
 </html>
