@@ -27,11 +27,19 @@
 		//Удалить значение с порядковым номером 3 в созданной ранее функции.
 		function perebor(arg) {
 			let i =0;
+			if(Array.isArray(arg)){
+					arg.splice(3,1);
+				}else{
+					delete arg[Object.keys(obj)[3]];
+
+				}
+
 			for(a in arg){
-				i===3? delete arg[a]:true;
-				console.log(arg[a]);
-				i++;
+					i===3? delete arg[a]:true;
+					console.log(arg[a]);
+					i++;
 			}
+
 			//Посмотреть длину .length для массива и для объекта после удаления.
 			console.log("длина обьекта=",arg.length?arg.length:Object.keys(arg).length);
 		}
@@ -45,6 +53,10 @@
 		        [two]:'asdsadsad'
 		    };
 
+		 function create(obj,key,val) {
+		    	obj[key]=val;
+		    }   
+		    create(obj2,"asdas","12312321")
 		console.log(obj2);
 	</script>
 	

@@ -1,13 +1,37 @@
-<?php
-	$arr = array(1,2,6,4);
+<?php  
 	require 'config.php';
-	$dbh = new PDO("mysql:host=$host;dbname=$bd;charset=UTF8", "$login", "$password");
-	$sth =$dbh->prepare("SELECT * FROM `task16` WHERE id IN(?) ");
-	foreach ($arr as $v ) {
-		$sth->execute([$v]);
-		$row = $sth->fetch(PDO::FETCH_ASSOC);
-		echo "ID --".$row['id']." Имя --".$row['name']."//   Датa рождения = ".$row['date']."<br/>";
-	}
+	require 'bdConect.php';
+
+	$arr = array(1,2,6,4);
+	
+	$placeholder = implode(',', array_fill(0, count($arr), '?'));
+
+	$sth =$dbh->prepare("SELECT * FROM `task16` WHERE `id` IN($placeholder)");
+
+	$sth->execute($arr);
+
+	$row = $sth->fetchAll(PDO::FETCH_ASSOC);
+		echo "<table  class='table table-striped table-bordered '>";
+  echo "<tr class='text-center table-info'>
+  		<th  scope='col'>ID</th>
+      <th  scope='col'>Имя</th>
+      <th  scope='col'>Дата рождения</th>
+    </tr>";
+	foreach ($row as $r ) {
+			echo "<tr class=''><td>".$r['id']."</td><td>".$r['name']."</td><td>".$r['date']."</td></tr>";
+		}
+
+	echo "<table >";
 	$sth = null;
 	$dbh = null;
 ?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datepicker </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</body>
+</html>

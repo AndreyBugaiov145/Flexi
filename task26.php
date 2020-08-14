@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
 		*{
 			margin: 0;
@@ -19,9 +20,9 @@
   <body>
   	<div class="position">
   		<form action="">
-  			<label >Введите долготу<input type="number" id="lat"></label>
-  			<label >Введите широту<input type="text" id="lng"></label>
-  			<input type="button" value="поставить метку" id="btn">
+  			<label >Введите долготу<input  class="form-control" type="number" id="lat"></label>
+  			<label >Введите широту<input class="form-control"  type="text" id="lng"></label>
+  			<input type="button" value="поставить метку" id="btn" class="btn btn-success">
   		</form>
   	</div>
     <div id="map"></div>

@@ -1,34 +1,23 @@
 <?php
 require 'config.php';
-$misqli = new mysqli($host, $login ,$password,$bd );
-$misqli->query("SET NAMES 'utf8'");
+require 'bdConect.php';
 
-$sucses = $misqli->query("SELECT * FROM `users`"); 
-function get($ar)
-{	
-	$arr = array();
-	while(($row = $ar->fetch_assoc())!=false){
-		$arr[] = $row;
-	}
-	return $arr;
-}
 
-$arr =get($sucses);
-
+$arr = $dbh->query("SELECT * FROM `users`"); 
 
 if (isset($_POST['submit'])) {
 	if(empty($_POST['product'])||empty($_POST['price'])||empty($_POST['short_description'])){
 		echo "<h3 style='color:red'>ОШИБКА.Заполните все поля</h3>";
 
 	}else{	
-		$w =$misqli->query("INSERT INTO `Product`(`product`, `price`, `short_description`, `userId`) VALUES ('{$_POST['product']}','{$_POST['price']}','{$_POST['short_description']}','{$_POST['select']}')"); 
+		$dbh->query("INSERT INTO `Product`(`product`, `price`, `short_description`, `userId`) VALUES ('{$_POST['product']}','{$_POST['price']}','{$_POST['short_description']}','{$_POST['select']}')"); 
 		
-		$misqli->close();
+		$dbh = null;
 		header("location: task12.php");
 	}
 
 }
-$misqli->close();
+$dbh = null;
 
 	
 
@@ -39,41 +28,51 @@ $misqli->close();
 <head>
 	<meta charset="UTF-8">
 	<title>Редактирование товара</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
 		.page{
+			position: relative;
 			margin: 0 auto;
-			width: 700px;
+			width: 500px;
 			background-color: silver;
 			padding: 10px;
 			border-radius: 10px;
+			margin-top: 7%;
 		}
-		input,label{
-			padding: 4px;
-			margin: 10px;
-		}
-		select,textarea{
-			margin-left: 13px;
-		}
+
 	</style>
 </head>
 <body>
-	<div class="page">
-		<h2>Обновить данные товара</h2>
-		<form action="<? $_SERVER['PHP_SELF'] ?>" method="post">
-			<label for="product">Введите новаое название продута</label><br>
-			<input type="text" name="product" id="product" value=""><br>
-			<label for="price">Введите новаую цену продута</label><br>
-			<input type="number" name="price" id="price" value=""><br>
-			<label for="">Выбериет владельца продукта</label><br>
-			<select name="select" id="select">
-				<?php foreach($arr as $val):?>
-					<option value="<? echo $val['id']?>"><? echo $val['name']?></option>
-				<?php endforeach;?>
-			</select><br><br>
-			<label for="short_description">Введите краткое описане</label><br>
-			<textarea name="short_description" id="short_description" cols="30" rows="10"></textarea>
-			<input type="submit" value="создать " name="submit">
-			<a href="task12.php"><input type="button" value="Отмена "></a>
+	<div class="page ">
+		<h2 class="">Добавление товара</h2><hr>
+		<form action="<? $_SERVER['PHP_SELF'] ?>" method="post" class=' '>
+			<div class="form-group form ">
+				<label for="product">Введите новаое название продута</label>
+				<input type="text" name="product" id="product" value=""class="form-control">
+			</div>
+			<div class="form-group form">	
+				<label for="price">Введите новаую цену продута</label>
+				<input type="number" name="price" id="price" value="" class="form-control">
+			</div>
+
+			<div class="form-group form">
+				<label for="">Выбериет владельца продукта</label>
+				<select name="select" id="select" class="form-control form-control-sm">
+					<?php foreach($arr as $val):?>
+						<option value="<? echo $val['id']?>"><? echo $val['name']?></option>
+					<?php endforeach;?>
+				</select>
+			</div>
+			<div class="form-group form">	
+				<label for="short_description">Введите краткое описане</label>
+				<textarea name="short_description" id="short_description" cols="50" rows="8" class="form-control"></textarea>
+			</div>
+			<input type="submit" value="создать " name="submit" class="btn btn-success">
+			<a href="task12.php"><input type="button" value="Отмена" class="btn btn-danger"></a>
 		</form>
 	</div>
 </body>

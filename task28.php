@@ -25,7 +25,8 @@ if (isset($_POST['submit'])) {
 	}
 
 	//echo "lengthMass = $lengthMass ||| count = $count<br><br>";
-	for ($i=0; $i <$lengthMass ; $i++) { 
+
+	for ($i=0; $i <$lengthMass ; $i++) {
 		for ($j=0; $j <$count ; $j++) { 
 			$matrix1[$i][$j] = isset($matrix1[$i][$j])?$matrix1[$i][$j]:0;
 			$matrix2[$i][$j] = isset($matrix2[$i][$j])?$matrix2[$i][$j]:0;
@@ -33,9 +34,12 @@ if (isset($_POST['submit'])) {
 		}
 		$rezaltMass[$i] = implode(" ", $rezaltMass[$i]);
 	}
+
+	echo "<br>";
 	foreach($mass1 as $v){
 		echo "$v<br>";
 	}
+
 	echo "+<br>";
 	foreach($mass2 as $v){
 		echo "$v<br>";
@@ -55,14 +59,38 @@ if (isset($_POST['submit'])) {
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.page{
+			position: relative;
+			margin: 0 auto;
+			width: 500px;
+			background-color: silver;
+			padding: 10px;
+			border-radius: 10px;
+			margin-top: 7%;
+		}
+		.textarea{
+			text-indent: 0px;
+		}
+
+	</style>
 </head>
 <body>
-	<form action="" method="POST">
-		<textarea name="matrix1" id="matrix1" cols="30" rows="10"></textarea>
-		<textarea name="matrix2" id="matrix2" cols="30" rows="10"></textarea>
-		<input type="submit" name="submit">
-	</form>
-	<script>
-	</script>
+	<div class="page">
+		<form action="" method="POST">
+			<div class="form-group form">
+				<textarea name="matrix1" id="matrix1" cols="30" rows="10" class="form-control" ></textarea>
+			</div>
+			<div class="form-group form">
+				<textarea name="matrix2" id="matrix2" cols="30" rows="10" class="form-control" ></textarea>
+			</div>
+			<input type="submit" name="submit" class="btn btn-success">
+		</form>
+	</div>	
 </body>
 </html>

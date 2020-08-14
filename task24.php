@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Аккордеон</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<style>
 		.page{
 			background-color: silver;
@@ -55,7 +56,7 @@
 		</ul>
 	</div>
 	<script>
-		let el = document.querySelectorAll(".page");
+		/*let el = document.querySelectorAll(".page");
 		el.forEach((e)=>{
 			e.addEventListener("click",foo,false);
 		});
@@ -65,7 +66,15 @@
 			});
 			this.lastElementChild.classList.remove("hide");
 			console.log(this.sibling);
+		}*/
+		let e = $(".page").on('click',akardeon);
+		function akardeon(e) {
+			$(this).siblings().each(function (i,elem) {
+				$(elem).children().last().slideUp(200);
+			})
+			$(this).children().last().slideDown(200);
 		}
+
 	</script>
 </body>
 </html>

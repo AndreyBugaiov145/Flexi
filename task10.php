@@ -3,13 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Выпадающий список</title>
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.page{
+			position: relative;
+			margin: 0 auto;
+			width: 500px;
+			background-color: silver;
+			padding: 10px;
+			border-radius: 10px;
+			margin-top: 7%;
+		}
+	</style>
 </head>
 <body>
-	<div class="tasks">
+	<div class="page">
 		<form action="<?php echo $_SERVER['PHP_SELF']?>" id="formTime">
 			<span>Выбери страну что бы узнать время</span>
-			<select name="" id="">werW
+			<select name="" id="" class="form-control form-control-sm">
 				<option value="0">Япония</option>
 				<option value="1">Китай</option>
 				<option value="2">Россия</option>
