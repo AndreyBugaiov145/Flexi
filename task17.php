@@ -1,21 +1,4 @@
-<?php
-if(isset($_POST['submit'])){
-	if(isset($_FILES['file'])){
-		$load = "load";
-		$file_name = $_FILES['file']["name"];
-		$file_tmp = $_FILES['file']["tmp_name"];
-		$file_type = $_FILES['file']["type"];
 
-		move_uploaded_file($file_tmp, "$load/$file_name");
-
-		if ((explode("/",$file_type ))[0] === 'image') {
-			echo "<img style='width:300px,height:300px' src='load/{$file_name}'>";
-		}else{
-			echo "<a href='load/{$file_name}' download>Скачать файл</a>";
-		}
-	}
-}
-?>
 
 
 <!DOCTYPE html>
@@ -36,5 +19,23 @@ if(isset($_POST['submit'])){
 		<label > Добавить файл<input type="file" name="file" ></label>
 		<input type="submit" name="submit" class="btn btn-primary" value="отправить">
 	</form>	
+<?php
+	if(isset($_POST['submit'])){
+		if(isset($_FILES['file'])){
+			$load = "load";
+			$file_name = $_FILES['file']["name"];
+			$file_tmp = $_FILES['file']["tmp_name"];
+			$file_type = $_FILES['file']["type"];
+
+			move_uploaded_file($file_tmp, "$load/$file_name");
+
+			if ((explode("/",$file_type ))[0] === 'image') {
+				echo "<img style='width:300px,height:300px' src='load/{$file_name}'>";
+			}else{
+				echo "<a href='load/{$file_name}' download>Скачать файл</a>";
+			}
+		}
+	}
+?>
 </body>
 </html>
