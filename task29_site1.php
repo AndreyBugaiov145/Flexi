@@ -1,14 +1,10 @@
 <?php
-echo $_SERVER['REMOTE_ADDR']."<br>";
-echo $_SERVER['HTTP_CLIENT_IP']."<br>";
-echo $_SERVER['HTTP_X_FORWARDED_FOR']."<br>";
 
 require 'config.php';
 require 'bdConect.php';
-/*	$sth=$dbh->prepare("INSERT INTO `task29`(`ip`) VALUES (:ip)");
+	$sth=$dbh->prepare("INSERT INTO `task29`(`ip`) VALUES (:ip)");
 	$r =$sth->execute(array('ip'=>$_SERVER['REMOTE_ADDR']));
 	$dbh = null;
-*/
 ?>
 
 <!doctype html>
@@ -43,8 +39,12 @@ require 'bdConect.php';
 	  </div>
 	  <div class="navbar navbar-dark bg-dark shadow-sm">
 	    <div class="container d-flex justify-content-between">
+	    	<?php if(isset($_GET['status'])&& $_GET['status']==='false') :?>
+	    	<h2 style='color:red'>Доступ к сайту ограничен</h2>
+	    	<? endif;?> 
+	    	<span style='color:white'><?='IP = '.$_SERVER['REMOTE_ADDR']?></span>
 	      <a href="#" class="navbar-brand d-flex align-items-center">
-	        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+	        
 	        <strong><a href="task29_site2.php">Bugaiov</a></strong>
 	      </a>
 	      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,8 +53,17 @@ require 'bdConect.php';
 	    </div>
 	  </div>
 	</header>
-
+	
 	<main role="main">
+		<?php if(isset($_GET['status'])&& $_GET['status']==='false') :?>
+	    	<section class="jumbotron text-center">
+		    <div class="container">
+		      <h1>Сайт запоминает ваш ip адрес</h1>
+		      <p class="lead text-muted">Доступ к сайту закрыт. Попробуйте воспользоваться другой ссылкой </p>
+		 
+		    </div>
+		  </section>
+	    <? exit();endif ; ?> 
 
 	  <section class="jumbotron text-center">
 	    <div class="container">

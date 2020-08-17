@@ -1,9 +1,8 @@
 <?PHP 
 require 'config.php';
-
+require 'bdConect.php';
 if (isset($_POST["submit"])) {
 	$text = htmlspecialchars($_POST["text"]);
-	$dbh = new PDO("mysql:host=$host;dbname=$bd;charset=UTF8", "$login", "$password");
 	$sth=$dbh->prepare("INSERT INTO `task19`(`some_text`) VALUES (:some_text)");
 	$r =$sth->execute(array('some_text'=>$text));
 	$dbh = null;
