@@ -5,6 +5,21 @@ require 'bdConect.php';
 	$sth=$dbh->prepare("INSERT INTO `task29`(`ip`) VALUES (:ip)");
 	$r =$sth->execute(array('ip'=>$_SERVER['REMOTE_ADDR']));
 	$dbh = null;
+	echo $_SERVER['HTTP_REFERER'];
+	$badSite = array('http://3.testsite.co.ua/task29_site2_page2.php','http://3.testsite.co.ua/task29_site2_page1.php');
+	/*$badSite = array('http://andreybugaiov.loc/task29_site2_page2.php','http://3.testsite.co.ua/task29_site2_page1.php');*/
+	$status ;
+	if(isset( $_SERVER['HTTP_REFERER'])){
+		foreach ($badSite as $value ) {
+			if($value === $_SERVER['HTTP_REFERER']){
+				$status = true;
+			}
+		}
+	}
+	if ($status) {
+		header ( 'Location: ', 'TRUE' , '403' ) ;
+	}
+//phpinfo();
 ?>
 
 <!doctype html>
@@ -39,13 +54,13 @@ require 'bdConect.php';
 	  </div>
 	  <div class="navbar navbar-dark bg-dark shadow-sm">
 	    <div class="container d-flex justify-content-between">
-	    	<?php if(isset($_GET['status'])&& $_GET['status']==='false') :?>
+	    	<?php if($status) :?>
 	    	<h2 style='color:red'>Доступ к сайту ограничен</h2>
 	    	<? endif;?> 
 	    	<span style='color:white'><?='IP = '.$_SERVER['REMOTE_ADDR']?></span>
 	      <a href="#" class="navbar-brand d-flex align-items-center">
 	        
-	        <strong><a href="task29_site2.php">Bugaiov</a></strong>
+	        <strong><a href="http://3.testsite.co.ua/task29_site2.php">Bugaiov</a></strong>
 	      </a>
 	      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
@@ -55,7 +70,7 @@ require 'bdConect.php';
 	</header>
 	
 	<main role="main">
-		<?php if(isset($_GET['status'])&& $_GET['status']==='false') :?>
+		<?php if($status) :?>
 	    	<section class="jumbotron text-center">
 		    <div class="container">
 		      <h1>Сайт запоминает ваш ip адрес</h1>
