@@ -39,7 +39,7 @@
 		</form>
 	</div>
 	<script>
-		let recvest = "http://andreybugaiov.loc/task32Api.php";
+		let recvest = "http://3.testsite.co.ua/task32Api.php";
 		function sedRecvest(method,url,body=null){
 		const headers = {
 		"Content-Type":"application/json" // устанавливаем header которые отправляютсья с запросом
