@@ -39,42 +39,7 @@
 		</form>
 	</div>
 	<script>
-		let recvest = "http://3.testsite.co.ua/task32Api.php";
-		function sedRecvest(method,url,body=null){
-		const headers = {
-		"Content-Type":"application/json" // устанавливаем header которые отправляютсья с запросом
-		};
-		return fetch(url,{//  по умолчанию выполняет метод GET
-		method:method,
-		body:JSON.stringify(body),
-		headers:headers})
-			.then(respons=>{
-		if(respons.ok){ alert("ok") ;return respons.text()}
-		alert("non")
-		return respons.json()
-		.then(eror=>{
-		let e = new Error('оишибочка');
-		e.data = eror
-		throw e
-		})
-		}) //получаем в виде обьекта то что храниться в в свостве полученого обьекта body: ReadableStream
-
-		}
-
-		sedRecvest("POST",recvest,{name:"ndrey",age:27}).then(data=>console.log(data)).catch(err=>console.log(err))
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 		$("#btn").on("click",foo);
 		function foo(argument) {
 			let data = {
