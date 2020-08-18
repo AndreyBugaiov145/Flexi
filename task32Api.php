@@ -1,8 +1,9 @@
 <?php
+echo "strasdsading";
 require 'config.php';
 require 'bdConect.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-	$sth=$dbh->query("SELECT * FROM `Product` ORDER BY product "); 
+	$sth=$dbh->query("SELECT * FROM `task32` "); 
 	$respons = $sth->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($respons);
 }else if($_SERVER['REQUEST_METHOD'] == 'POST'){
