@@ -5,10 +5,10 @@ require 'bdConect.php';
 	$sth=$dbh->prepare("INSERT INTO `task29`(`ip`) VALUES (:ip)");
 	$r =$sth->execute(array('ip'=>$_SERVER['REMOTE_ADDR']));
 	$dbh = null;
-	echo $_SERVER['HTTP_REFERER'];
+	//echo $_SERVER['HTTP_REFERER'];
 	$badSite = array('http://3.testsite.co.ua/task29_site2_page2.php','http://3.testsite.co.ua/task29_site2_page1.php');
 	/*$badSite = array('http://andreybugaiov.loc/task29_site2_page2.php','http://3.testsite.co.ua/task29_site2_page1.php');*/
-	$status ;
+	$status = false;
 	if(isset( $_SERVER['HTTP_REFERER'])){
 		foreach ($badSite as $value ) {
 			if($value === $_SERVER['HTTP_REFERER']){
