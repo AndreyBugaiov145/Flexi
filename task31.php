@@ -33,8 +33,6 @@ INNER JOIN users ON users.id = Product.userid ORDER BY product ");
 			<th  scope="col">Цена</th>
 			<th  scope="col">Описание</th>
 			<th  scope="col">Имя владельца</th>
-			<th  scope="col">Удаление товара</th>
-			<th  scope="col">Изменить товара</th>
 		</tr>
 		<?php foreach ($arr as $value): ?>
 			<tr class=''>
@@ -42,13 +40,9 @@ INNER JOIN users ON users.id = Product.userid ORDER BY product ");
 				<td><?php echo $value['price']?></td>
 				<td><?php echo $value['short_description']?></td>
 				<td><?php echo $value['user']?></td>
-				<td><a href="serverTask12.php?<?php echo 'id='.$value['id']?>" onclick="goo(<?php echo $value['id']?>,'delet')">Удалить</a></td>
-				<td><a href="task12Update.php?<?php echo 'id='.$value['id']?>" onclick="goo(<?php echo $value['id']?>,'update')">Редактировать</a></td>
-
 			</tr>
 		<?php endforeach;?>
 	</table>
-	<a href="task12Create.php"><button class="btn btn-success">Добавить товар</button></a>	
 </body>
 </html>
 
