@@ -47,6 +47,7 @@
 			<li><a  href="task30.php">task30</a></li>
 			<li><a  href="task31.php">task31</a></li>
 			<li><a  href="task32.php">task32</a></li>
+			<li><a  href="http://curlapi.testsite.co.ua/">task32 _cUrl запрос</a></li>
 			<li><a  href="task33.php">task33</a></li>
 		</ul>
 	</div>
