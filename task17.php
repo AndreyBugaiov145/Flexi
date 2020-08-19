@@ -44,7 +44,7 @@
 	         	if ((explode(".",$dir.$files[$i] ))[1] === $type[0]||(explode(".",$dir.$files[$i]))[1] === $type[1]||(explode(".",$dir.$files[$i]))[1] === $type[2]) {
 					echo "<div class='d'><img style='width:300px,height:300px' src='{$dir}{$files[$i]}'></div><br>";
 				}else{
-					echo "<div class='d'><a href='$dir{$files[$i]}' download>Скачать файл</a></div><br>";	
+					echo "<div class='d'><a href='{$dir}{$files[$i]}' download>Скачать файл</a></div><br>";	
 		         }
 		    } 
 		} else echo $dir.' -такой директории нет;<br>';
