@@ -31,7 +31,10 @@
 			move_uploaded_file($file_tmp, "$load/$file_name");
 			$type= array('jpg','png','jpeg');
 
-		    $dir = "load/"; 
+		    
+		}
+	}
+	$dir = "load/"; 
 		    if(is_dir($dir)) {   
 
 		         $files = scandir($dir);   
@@ -46,8 +49,6 @@
 		         }
 		    } 
 		} else echo $dir.' -такой директории нет;<br>';
-		}
-	}
 ?>
 </body>
 </html>
