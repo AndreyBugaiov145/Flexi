@@ -41,7 +41,7 @@
 			<li><a  href="task25.php">task25</a></li>
 			<li><a  href="task26.php">task26</a></li>
 			<li><a  href="task27.php">task27</a></li>
-			<hr><hr><hr><hr><hr>
+			<hr><hr>
 			<li><a  href="task28.php">task28</a></li>
 			<li><a  href="task29_site2.php">task29</a></li>
 			<li><a  href="task30.php">task30</a></li>
