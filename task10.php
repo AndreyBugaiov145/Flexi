@@ -42,10 +42,10 @@
 		const el = document.getElementById("formTime");
 		el.addEventListener('change',getTime,false);
 		function getTime() {
-			//Получам индекс страны
+
 			let check = el.querySelector("select").value;
 			headers= {'Content-Type': 'application/json'};
-			//запрос на сервер
+
 		fetch("serverTask10.php",{
 			method:"POST",
 			body:JSON.stringify({"check":check}),

@@ -45,9 +45,7 @@ if (isset($_GET['submit'])){
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
   <style>
-    /* .ui-datepicker-year{
-       display:none;   
-      } */
+
       .page{
         margin: 0 auto;
         width: 400px;
@@ -57,11 +55,10 @@ if (isset($_GET['submit'])){
     $( function() {
     $( "#date_from" ).datepicker({
         dateFormat: 'dd-mm-yy'
-        //changeYear: false 
     });
      $( "#date_to" ).datepicker({
         dateFormat: 'dd-mm-yy'
-        //changeYear: false 
+
     });
   });  
   

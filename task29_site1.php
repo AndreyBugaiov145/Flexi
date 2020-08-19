@@ -5,9 +5,8 @@ require 'bdConect.php';
 	$sth=$dbh->prepare("INSERT INTO `task29`(`ip`) VALUES (:ip)");
 	$r =$sth->execute(array('ip'=>$_SERVER['REMOTE_ADDR']));
 	$dbh = null;
-	//echo $_SERVER['HTTP_REFERER'];
+
 	$badSite = array('http://3.testsite.co.ua/task29_site2_page2.php','http://3.testsite.co.ua/task29_site2_page1.php');
-	/*$badSite = array('http://andreybugaiov.loc/task29_site2_page2.php','http://3.testsite.co.ua/task29_site2_page1.php');*/
 	$status = false;
 	if(isset( $_SERVER['HTTP_REFERER'])){
 		foreach ($badSite as $value ) {
@@ -19,17 +18,17 @@ require 'bdConect.php';
 	if ($status) {
 		header ( 'Location: ', 'TRUE' , '403' ) ;
 	}
-//phpinfo();
+
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>Hello, world!</title>
@@ -155,8 +154,7 @@ require 'bdConect.php';
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

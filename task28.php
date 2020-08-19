@@ -24,7 +24,6 @@ if (isset($_POST['submit'])) {
 		$count= $count>count(explode(" ",$value))?$count:count(explode(" ",$value));
 	}
 
-	//echo "lengthMass = $lengthMass ||| count = $count<br><br>";
 
 	for ($i=0; $i <$lengthMass ; $i++) {
 		for ($j=0; $j <$count ; $j++) { 

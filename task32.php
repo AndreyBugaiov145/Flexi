@@ -53,16 +53,15 @@
 			data:data,
 			success:function function_name(d_data,status) {
 				console.log(d_data);
-				//let rez = $.parseJSON(d_data);
-				//console.log(rez);
+
 				},
-			error:function (argument) { // вызовиться при ошибке запроса к серверу
+			error:function (argument) {
 				alert("Данные ввендены не корректно ")
 				},
 			dataType:"text"	,
-			timeOut:1000, // время оидания ответа ,если больше выдаст ошибку
-			crossDomain:true,// если обащаемся к серверу на другом домене 
-			scriptCharset: "utf8" // указываем кодировку при обращаению к серверу на другом домене	
+			timeOut:1000, 
+			crossDomain:true,
+			scriptCharset: "utf8" 
 			});
 		}
 	</script>

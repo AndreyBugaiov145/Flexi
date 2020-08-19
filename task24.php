@@ -56,17 +56,7 @@
 		</ul>
 	</div>
 	<script>
-		/*let el = document.querySelectorAll(".page");
-		el.forEach((e)=>{
-			e.addEventListener("click",foo,false);
-		});
-		function foo(event) {
-			el.forEach((e)=>{
-				e.lastElementChild.classList.add("hide");
-			});
-			this.lastElementChild.classList.remove("hide");
-			console.log(this.sibling);
-		}*/
+
 		let e = $(".page").on('click',akardeon);
 		function akardeon(e) {
 			$(this).siblings().each(function (i,elem) {

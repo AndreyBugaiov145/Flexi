@@ -12,7 +12,6 @@ function FunctionName()
 
 	if(!$rez){
 		for ($i=0; $i < count($args); $i++) { 
-			//$args[$i] .="";
 			$args[$i]=strval($args[$i]);
 		}
 	}

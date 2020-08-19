@@ -6,7 +6,7 @@
 </head>
 <body>
 	<script>
-		//Создать массив и создать объект. Посмотреть их длину .length
+
 		let mass = [1,5,3,5,5,"dsfsd"];
 		let obj = {
 			name : "Andrey",
@@ -16,7 +16,7 @@
 		}
 		console.log(mass.length,Object.keys(obj).length);
 
-		//Создать функцию которая будет перебирать значения и выводить их в консоль.
+
 		function function_name() {
 			for (var i = 0; i < arguments.length; i++) {
 				console.log( arguments[i])
@@ -24,7 +24,7 @@
 		}
 		function_name(1,52,6,4);
 
-		//Удалить значение с порядковым номером 3 в созданной ранее функции.
+
 		function perebor(arg) {
 			let i =0;
 			if(Array.isArray(arg)){
@@ -40,12 +40,12 @@
 					i++;
 			}
 
-			//Посмотреть длину .length для массива и для объекта после удаления.
+
 			console.log("длина обьекта=",arg.length?arg.length:Object.keys(arg).length);
 		}
 		perebor(obj)
 
-		// Создать массив или объект в котором ключ будет динамическим.
+
 		var key = 'DYNAMIC_KEY',
 		 	two = 'NEXT_KEY',
 		    obj2 = {
