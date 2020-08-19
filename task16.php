@@ -18,17 +18,6 @@ if (isset($_GET['submit'])){
 
 	$arr =$sucses->fetchAll(PDO::FETCH_ASSOC);
 
-
-  echo "<table  class='table table-striped table-bordered '>";
-  echo "<tr class='text-center table-info'>
-      <th  scope='col'>Имя</th>
-      <th  scope='col'>Дата рождения</th>
-    </tr>";
-  foreach ($arr as  $value){
-    echo "<tr class=''><td>".$value['name']."</td><td>".$value['date']."</td></tr>";
-  }
-  echo "<table >";
-
 	$dbh = null;
 }
 ?>
@@ -58,14 +47,27 @@ if (isset($_GET['submit'])){
     });
      $( "#date_to" ).datepicker({
         dateFormat: 'dd-mm-yy'
-
     });
   });  
   
   </script> 
 </head>
 <body>
-  <div class="page">
+  <?if (isset($arr )):?>
+  <div class=" container">
+    <table  class='table table-striped table-bordered '>
+      <tr class='text-center table-info'>
+      <th  scope='col'>Имя</th>
+      <th  scope='col'>Дата рождения</th>
+      <? foreach ($arr as  $value): ?>
+        <tr class=''><td><?=$value['name']?></td><td><?=$value['date']?></td></tr>
+      <?endforeach;?>
+      <table >
+
+    </tr>
+  </div>
+  <?endif;?>
+  <div class="page container">
     <form action="" method="get">
       <div class="form-group form ">
         <p>Date: <input type="text" id="date_from" name="date_from"class="form-control" ></p>

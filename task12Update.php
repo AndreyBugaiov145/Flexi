@@ -35,7 +35,7 @@ require 'bdConect.php';
 	</style>
 </head>
 <body>
-	<div class="page">
+	<div class="page container">
 		<h2 class="">Обновить данные товара</h2><hr>
 		<form action="serverTask12Update.php?<?php echo 'id='.$_GET['id']?>" method="post" class=' '>
 			<div class="form-group form ">

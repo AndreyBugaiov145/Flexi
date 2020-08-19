@@ -17,6 +17,7 @@
 		</style>
 </head>
 <body>
+	<div class="container">
 	<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
 		<label > Добавить файл<input type="file" name="file" ></label>
 		<input type="submit" name="submit" class="btn btn-primary" value="отправить">
@@ -43,11 +44,11 @@
 	         	if ((explode(".",$dir.$files[$i] ))[1] === $type[0]||(explode(".",$dir.$files[$i]))[1] === $type[1]||(explode(".",$dir.$files[$i]))[1] === $type[2]) {
 					echo "<div class='d'><img style='width:300px,height:300px' src='{$dir}{$files[$i]}'></div><br>";
 				}else{
-					echo "<div class='d'><a href='$dir}{$files[$i]}' download>Скачать файл</a></div><br>";
-				
-	         }
-	    } 
-	} else echo $dir.' -такой директории нет;<br>';
-?>
+					echo "<div class='d'><a href='$dir}{$files[$i]}' download>Скачать файл</a></div><br>";	
+		         }
+		    } 
+		} else echo $dir.' -такой директории нет;<br>';
+	?>
+	</div>
 </body>
 </html>

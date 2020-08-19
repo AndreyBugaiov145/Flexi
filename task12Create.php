@@ -47,7 +47,7 @@ $dbh = null;
 	</style>
 </head>
 <body>
-	<div class="page ">
+	<div class="page container ">
 		<h2 class="">Добавление товара</h2><hr>
 		<form action="<? $_SERVER['PHP_SELF'] ?>" method="post" class=' '>
 			<div class="form-group form ">

@@ -21,7 +21,7 @@
 	</style>
 </head>
 <body>
-	<div class="page">
+	<div class="page container">
 		<form action="<?php echo $_SERVER['PHP_SELF']?>" id="formTime">
 			<span>Выбери страну что бы узнать время</span>
 			<select name="" id="" class="form-control form-control-sm">

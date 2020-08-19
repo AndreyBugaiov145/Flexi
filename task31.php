@@ -26,23 +26,25 @@ INNER JOIN users ON users.id = Product.userid ORDER BY product ");
 	</style>
 </head>
 <body>
-	<table  class="table table-striped table-bordered ">
-		<caption>Таблица товаров</caption>
-		<tr class="text-center table-info">
-			<th  scope="col">Название товара</th>
-			<th  scope="col">Цена</th>
-			<th  scope="col">Описание</th>
-			<th  scope="col">Имя владельца</th>
-		</tr>
-		<?php foreach ($arr as $value): ?>
-			<tr class=''>
-				<td><?php echo $value['product']?></td>
-				<td><?php echo $value['price']?></td>
-				<td><?php echo $value['short_description']?></td>
-				<td><?php echo $value['user']?></td>
+	<div class="container">
+		<table  class="table table-striped table-bordered ">
+			<caption>Таблица товаров</caption>
+			<tr class="text-center table-info">
+				<th  scope="col">Название товара</th>
+				<th  scope="col">Цена</th>
+				<th  scope="col">Описание</th>
+				<th  scope="col">Имя владельца</th>
 			</tr>
-		<?php endforeach;?>
-	</table>
+			<?php foreach ($arr as $value): ?>
+				<tr class=''>
+					<td><?php echo $value['product']?></td>
+					<td><?php echo $value['price']?></td>
+					<td><?php echo $value['short_description']?></td>
+					<td><?php echo $value['user']?></td>
+				</tr>
+			<?php endforeach;?>
+		</table>
+	</div>
 </body>
 </html>
 

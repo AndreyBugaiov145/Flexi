@@ -12,6 +12,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="js/jquery-3.4.0.js"></script>
 	<style>
 		button{
 			float: right;
@@ -25,6 +26,7 @@
 	</style>
 </head>
 <body>
+	<div class="container">
 	<table  class="table table-striped table-bordered ">
 		<caption>Таблица товаров</caption>
 		<tr class="text-center table-info">
@@ -39,12 +41,21 @@
 				<td><?php echo $value['product']?></td>
 				<td><?php echo $value['price']?></td>
 				<td><?php echo $value['short_description']?></td>
-				<td><a href="serverTask12.php?<?php echo 'id='.$value['id']?>" onclick="goo(<?php echo $value['id']?>,'delet')">Удалить</a></td>
-				<td><a href="task12Update.php?<?php echo 'id='.$value['id']?>" onclick="goo(<?php echo $value['id']?>,'update')">Редактировать</a></td>
+				<td><a href="serverTask12.php?<?php echo 'id='.$value['id']?>" class="confirm">Удалить</a></td>
+				<td><a href="task12Update.php?<?php echo 'id='.$value['id']?>" >Редактировать</a></td>
 
 			</tr>
 		<?php endforeach;?>
 	</table>
 	<a href="task12Create.php"><button class="btn btn-success">Добавить товар</button></a>	
+	</div>
+	<script>
+		$('.confirm').click(
+		function foo(e) {
+			if (!confirm('вы уверены?')) {
+				e.preventDefault();
+			}
+		})
+	</script>
 </body>
 </html>

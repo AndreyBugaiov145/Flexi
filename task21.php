@@ -11,17 +11,7 @@
 	$sth->execute($arr);
 
 	$row = $sth->fetchAll(PDO::FETCH_ASSOC);
-		echo "<table  class='table table-striped table-bordered '>";
-  echo "<tr class='text-center table-info'>
-  		<th  scope='col'>ID</th>
-      <th  scope='col'>Имя</th>
-      <th  scope='col'>Дата рождения</th>
-    </tr>";
-	foreach ($row as $r ) {
-			echo "<tr class=''><td>".$r['id']."</td><td>".$r['name']."</td><td>".$r['date']."</td></tr>";
-		}
 
-	echo "<table >";
 	$sth = null;
 	$dbh = null;
 ?>
@@ -32,6 +22,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Datepicker </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+	<?if($row):?>
+	<div class="container">
+		<table  class='table table-striped table-bordered '>
+			<tr class='text-center table-info'>
+				<th  scope='col'>id</th>
+		      <th  scope='col'>Имя</th>
+		      <th  scope='col'>Дата рождения</th>
+		    </tr>
+		    <?foreach ($row as $value):?>
+		    <tr class=''><td><?=$value['id']?></td>
+		    <td> <?=$value['name']?></td><td> <?=$value['date']?></td></tr>
+		    <?endforeach;?>
+		<table >
+	</div>
+	<?endif;?>
 
+</body>
 </body>
 </html>

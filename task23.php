@@ -31,16 +31,11 @@
 					arg.splice(3,1);
 				}else{
 					delete arg[Object.keys(obj)[3]];
-
 				}
 
 			for(a in arg){
-					i===3? delete arg[a]:true;
 					console.log(arg[a]);
-					i++;
 			}
-
-
 			console.log("длина обьекта=",arg.length?arg.length:Object.keys(arg).length);
 		}
 		perebor(obj)

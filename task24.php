@@ -8,7 +8,7 @@
 		.page{
 			background-color: silver;
 			border-radius: 5px;
-			-width: 400px;
+			width: 400px;
 			padding: 10px;
 			margin: 5px;
 		}
@@ -19,41 +19,43 @@
 	</style>
 </head>
 <body>
-	<div class="page">
-		<span >Блок-1</span>
-		<ul class="">
-			<li>dsfsdfsd</li>
-			<li>sdfsdfs</li>
-			<li>sdfsdf</li>
-			<li>sdfsdff</li>
-		</ul>
-	</div>
-	<div class="page">
-		<span >Блок-2</span>
-		<ul class="hide ">
-			<li>dsfsdfsd</li>
-			<li>sdfsdfs</li>
-			<li>sdfsdf</li>
-			<li>sdfsdff</li>
-		</ul>
-	</div>
-	<div class="page">
-		<span >Блок-3</span>
-		<ul class="hide ">
-			<li>dsfsdfsd</li>
-			<li>sdfsdfs</li>
-			<li>sdfsdf</li>
-			<li>sdfsdff</li>
-		</ul>
-	</div>
-	<div class="page">
-		<span >Блок-4</span>
-		<ul class="hide ">
-			<li>dsfsdfsd</li>
-			<li>sdfsdfs</li>
-			<li>sdfsdf</li>
-			<li>sdfsdff</li>
-		</ul>
+	<div class="container">
+		<div class="page">
+			<span >Блок-1</span>
+			<ul class="">
+				<li>dsfsdfsd</li>
+				<li>sdfsdfs</li>
+				<li>sdfsdf</li>
+				<li>sdfsdff</li>
+			</ul>
+		</div>
+		<div class="page">
+			<span >Блок-2</span>
+			<ul class="hide ">
+				<li>dsfsdfsd</li>
+				<li>sdfsdfs</li>
+				<li>sdfsdf</li>
+				<li>sdfsdff</li>
+			</ul>
+		</div>
+		<div class="page">
+			<span >Блок-3</span>
+			<ul class="hide ">
+				<li>dsfsdfsd</li>
+				<li>sdfsdfs</li>
+				<li>sdfsdf</li>
+				<li>sdfsdff</li>
+			</ul>
+		</div>
+		<div class="page">
+			<span >Блок-4</span>
+			<ul class="hide ">
+				<li>dsfsdfsd</li>
+				<li>sdfsdfs</li>
+				<li>sdfsdf</li>
+				<li>sdfsdff</li>
+			</ul>
+		</div>
 	</div>
 	<script>
 

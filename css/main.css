@@ -6,7 +6,7 @@
 }
 a{
 	color:#000;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 a:hover{
 	color: blue;
@@ -25,7 +25,7 @@ li{
 div.tasks{
 	padding: 5px;
 	margin: 0 auto;
-	width: 700px;
+	width: 900px;
 	background-color: #f3f3f3;
 }
 

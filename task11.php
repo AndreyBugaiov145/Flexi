@@ -21,7 +21,7 @@
 	</style>
 </head>
 <body>
-	<div class="page">
+	<div class="page container">
 		<form action="serverTask11.php" method="post" >
 			<div class="form-group form">
 				<label for="">Введите первое число
