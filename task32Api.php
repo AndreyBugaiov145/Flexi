@@ -35,7 +35,7 @@ $dbh = null;
 			<tr class=''>
 				<td><?php echo $value['name']?></td>
 				<td><?php echo $value['number']?></td>
-				<td><a href="serverTask12.php?<?php echo 'id='.$value['id']?>" class="confirm">Удалить</a></td>
+				<td><a href="<?php $ch = curl_init('http://andreybugaiov.loc/task32Api.php'); curl_setopt($ch, CURLOPT_POSTFIELDS, ['id'=>$value['id']]); curl_exec($ch);?>" class="confirm">Удалить</a></td>
 			</tr>
 		<?php endforeach;?>
 	</table>
