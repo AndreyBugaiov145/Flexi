@@ -20,10 +20,15 @@
 			border-radius: 10px;
 			margin-top: 7%;
 		}
-
+		.err{
+			display: none;
+		}
 	</style>
 </head>
 <body>
+	<div id="err" class='err'>
+		<span style='color:red'></span>
+	</div>
 	<div class="page ">
 		<h2 class="">Создание записи</h2><hr>
 		<form action="<? $_SERVER['PHP_SELF'] ?>" method="post" class=' '>
@@ -39,7 +44,10 @@
 		</form>
 	</div>
 	<script>
-	
+		String.prototype.replaceAll = function(search, replace){
+			return this.split(search).join(replace);
+		}
+
 		$("#btn").on("click",foo);
 		function foo(argument) {
 			let data = {
@@ -55,8 +63,12 @@
 				console.log(d_data);
 
 				},
-			error:function (argument) {
-				alert("Данные ввендены не корректно ")
+			error:function (d_data) {
+				console.log(d_data);
+				alert("Данные ввендены не корректно ");
+				let mass = document.cookie.split(';');
+				mass = mass[0].split('=');
+				$('#err').removeClass('err').children().first().text(decodeURIComponent(mass[1]).replaceAll('+',' '));
 				},
 			dataType:"text"	,
 			timeOut:1000, 

@@ -3,7 +3,7 @@
 require 'config.php';
 require 'bdConect.php';
 	$sth=$dbh->prepare("INSERT INTO `task29`(`ip`) VALUES (:ip)");
-	$r =$sth->execute(array('ip'=>$_SERVER['REMOTE_ADDR']));
+	$r =$sth->execute(array('ip'=>$_SERVER['HTTP_REFERER']));
 	$dbh = null;
 
 	$badSite = array('http://3.testsite.co.ua/task29_site2_page2.php','http://3.testsite.co.ua/task29_site2_page1.php');
@@ -56,7 +56,7 @@ require 'bdConect.php';
 	    	<?php if($status) :?>
 	    	<h2 style='color:red'>Доступ к сайту ограничен</h2>
 	    	<? endif;?> 
-	    	<span style='color:white'><?='IP = '.$_SERVER['REMOTE_ADDR']?></span>
+	    	<span style='color:white'><?='Adress = '.$_SERVER['HTTP_REFERER']?></span>
 	      <a href="#" class="navbar-brand d-flex align-items-center">
 	        
 	        <strong><a href="http://3.testsite.co.ua/task29_site2.php">Bugaiov</a></strong>

@@ -1,8 +1,8 @@
 <?php
 	require 'config.php';
 	require 'bdConect.php';
-	$arr=$dbh->query("SELECT product, price, short_description , users.name as user FROM `Product`
-INNER JOIN users ON users.id = Product.userid ORDER BY product "); 
+	$arr=$dbh->query("SELECT product, price, short_description , users_1.name as user FROM `Product_1`
+INNER JOIN users_1 ON users_1.id = Product_1.user_id ORDER BY product "); 
 	$dbh = null;
 
 ?>
