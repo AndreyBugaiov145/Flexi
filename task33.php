@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 require 'bdConect.php';
-if ($_POST["submit"]) {
+if (isset($_POST["submit"])) {
     $fio = htmlspecialchars($_POST["fio"]);
     $adres = htmlspecialchars($_POST["adres"]);
     $books = $_POST["boock"];
