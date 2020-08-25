@@ -24,7 +24,7 @@ function getUserId($arrBooks)
 {
     $arrUserId = array();
     foreach ($arrBooks as $book) {
-        !in_array($book[user_id], $arrUserId) ? $arrUserId[] = $book[user_id] : false;
+        !in_array($book['user_id'], $arrUserId) ? $arrUserId[] = $book['user_id'] : false;
     }
     return $arrUserId;
 }

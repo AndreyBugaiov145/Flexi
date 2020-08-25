@@ -37,11 +37,8 @@ $respons = json_decode($respons);
                 </tr>
             <?php endforeach; ?>
         </table>
-        <a href="task12Create.php">
-            <button class="btn btn-success">Добавить товар</button>
-        </a>
     </div>
-    <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;top:400px;">Вернуться к списку
+    <a href="http://3.testsite.co.ua/ " class="btn btn-info " style="position:absolute; right: 0;top:400px;">Вернуться к списку
         заданий</a>
     </body>
     </html>
