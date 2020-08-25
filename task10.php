@@ -56,7 +56,7 @@
             body: formdata,
             redirect: 'follow'
         };
-        fetch("http://andreybugaiov.loc/serverTask10.php", requestOptions)
+        fetch("http://3.testsite.co.ua/serverTask10.php", requestOptions)
             .then(response => response.text())
             .then(result => alert(result))
             .catch(error => console.log('error', error));
