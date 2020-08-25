@@ -48,6 +48,14 @@ $dbh = null;
     </table>
 </div>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;top:0;">Вернуться к списку заданий</a>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5 container">
+    <div class="col-md-6 px-0">
+        <span>
+             Используя наработки из задачи 15:
+            В имеющуюся таблицу где мы выводим список товаров — добавить колонку «Владелец» и вывести туда имя и фамилию пользователя, которому принадлежит товар.
+        </span>
+    </div>
+</div>
 </body>
 </html>
 

@@ -47,6 +47,16 @@
     </form>
 </div>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;top:0;">Вернуться к списку заданий</a>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5 container">
+    <div class="col-md-6 px-0">
+        <span>
+             Выполнить следующие задачи:
+- Создать форму и обработчик для нее. Если пользователь ввел неправильные данные, должна вернуться ошибка валидации и соответствующий статус. Данные должны отправляться через AJAX и сохраняться в базу данных.
+- Создать простое api. Которое будет отдавать данные всех пользователей (см пункт 3) так же иметь возможность удалить данные через post запрос.
+- Создать отдельный сайт. В котором данные должны получаться через curl с api, которое было создано ранее.
+        </span>
+    </div>
+</div>
 <script>
     String.prototype.replaceAll = function (search, replace) {
         return this.split(search).join(replace);

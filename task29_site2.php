@@ -14,14 +14,19 @@
 <body>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal"><a href="task29_site2.php">Bugaiov</a></h5>
-    <a href="index.php " class="btn btn-info mr-3 " >Вернуться к списку заданий</a>
+    <a href="index.php " class="btn btn-info mr-3 ">Вернуться к списку заданий</a>
     <a class="btn btn-outline-primary" href="http://task29.testsite.co.ua">Перейти на первый сайт</a>
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Второй сайт</h1>
-    <p class="lead">На втором сайте нужно создать три, четыре, любое произвольное количество страниц и ссылку на на
-        первый сайт. </p>
+    <p class="lead">Создать два сайта.
+        Один должен всегда сохранять в базу адрес с которого пришел клиент. Данный параметр можно найти в глобальной
+        переменной сервер.
+        На втором сайте нужно создать три, четыре, любое произвольное количество страниц и ссылку на на первый сайт.
+        Заблокировать посещение сайта с определённые ссылки (если видим что пользователь пришел с такой страницы).
+        Должен быть соответствующий статус в header и определённый контент, что доступ закрыт с данной ссылки. Если
+        заходим с другой, контент нормальный. </p>
 </div>
 
 <div class="container">

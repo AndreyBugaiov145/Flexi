@@ -60,5 +60,17 @@
     console.log(obj2);
 </script>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;top:0;">Вернуться к списку заданий</a>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5 container">
+    <div class="col-md-6 px-0">
+        <span>
+           Работа с array + object:
+- Создать массив и создать объект. Посмотреть их длину .length
+- Создать функцию которая будет перебирать значения и выводить их в консоль.
+- Удалить значение с порядковым номером 3 в созданной ранее функции.
+- Посмотреть длину .length для массива и для объекта после удаления.
+- Создать массив или объект в котором ключ будет динамическим.й.
+        </span>
+    </div>
+</div>
 </body>
 </html>

@@ -81,5 +81,13 @@ if (isset($_GET['submit'])) {
     </form>
 </div>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;bottom: 300px;">Вернуться к списку заданий</a>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5 container">
+    <div class="col-md-6 px-0">
+        <span>
+            Создать два текстовых поля и подключить datepicker.
+При выборе диапазона, вывести пользователей с датой рождения в этом диапазоне.
+        </span>
+    </div>
+</div>
 </body>
 </html>

@@ -44,6 +44,13 @@ $dbh = null;
     </div>
 <? endif; ?>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;bottom: 300px;">Вернуться к списку заданий</a>
-</body>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5 container">
+    <div class="col-md-6 px-0">
+        <span>
+            Имеется массив чисел, получить из таблицы в задаче 20 список всех пользователей, чьи ID совпадают с числами из массива.
+        </span>
+    </div>
+</div>
+
 </body>
 </html>

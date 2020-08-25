@@ -33,6 +33,12 @@ $arrUsers = $results->fetchAll(PDO::FETCH_ASSOC);
     </div>
 <? endif; ?>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;bottom: 300px;">Вернуться к списку заданий</a>
-</body>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5 container">
+    <div class="col-md-6 px-0">
+        <span>
+           В таблице из задачи 20 получить список пользователей у которых уже прошел ДР в этом году и тех у кого ДР будет через 10 дней.
+        </span>
+    </div>
+</div>
 </body>
 </html>

@@ -43,5 +43,14 @@ try {
     </div>
 <? endif; ?>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;bottom: 300px;">Вернуться к списку заданий</a>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mt-5 container">
+    <div class="col-md-6 px-0">
+        <span>
+           Создать таблицу в базе данных.
+В которой будут находиться данные о пользователях. Одно из полей будет дата рождения.
+Получить всех пользователей, у которых будет день рождение через 10 дней.
+        </span>
+    </div>
+</div>
 </body>
 </html>
