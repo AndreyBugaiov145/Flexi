@@ -1,9 +1,9 @@
 <?php
 require 'config.php';
 require 'bdConect.php';
-	$r = $dbh->query("SELECT * FROM `Product` where `id` ={$_GET["id"]}"); 
+	$r = $dbh->query("SELECT * FROM `Product_1` where `id` ={$_GET["id"]}");
 	$row =$r->fetch(PDO::FETCH_ASSOC);
-	$arr = $dbh->query("SELECT * FROM `users`"); 
+	$arr = $dbh->query("SELECT * FROM `users_1`");
 	$dbh = null;
 
 ?>

@@ -1,11 +1,48 @@
 <?php
-
-//$ch = curl_init('http://3.testsite.co.ua/task32Api.php');
-$ch = curl_init('http://andreybugaiov.loc/task32Api.php');
-
+if (isset($_GET['id'])) {
+    $chDelet = curl_init('http://3.testsite.co.ua/task32Api.php');
+    curl_setopt($chDelet, CURLOPT_POSTFIELDS, ['id' => $_GET['id']]);
+    $html = curl_exec($chDelet);
+    curl_close($chDelet);
+}
+$ch = curl_init('http://3.testsite.co.ua/task32Api.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//curl_setopt($ch, CURLOPT_POSTFIELDS, ['id'=>"1"]);
-$html = curl_exec($ch);
+$respons = curl_exec($ch);
 curl_close($ch);
-echo $html;
+$respons = json_decode($respons);
 ?>
+<? if (isset($respons)): ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+              crossorigin="anonymous">
+    </head>
+    <body>
+    <div class="container">
+        <table class="table table-striped table-bordered ">
+            <tr class="text-center table-info">
+                <th scope="col">Имя</th>
+                <th scope="col">Номер телефона</th>
+                <th scope="col">Удалить</th>
+            </tr>
+            <?php foreach ($respons as $value): ?>
+                <tr class=''>
+                    <td><?= $value->name ?></td>
+                    <td><?= $value->numbe ?></td>
+                    <td><a href="<?= $_SERVER['PHP_SELF'] . "?id=" . $value->id ?>" class="confirm">Удалить</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <a href="task12Create.php">
+            <button class="btn btn-success">Добавить товар</button>
+        </a>
+    </div>
+    <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;top:400px;">Вернуться к списку
+        заданий</a>
+    </body>
+    </html>
+<? endif; ?>
