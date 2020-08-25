@@ -20,8 +20,13 @@ if ($status) {
     setcookie("TestCookie", '', time() - 7);
     $name = htmlspecialchars($_POST["name"]);
     $number = htmlspecialchars($_POST["number"]);
+
+    try {
     $sth = $dbh->prepare("INSERT INTO `task32`(`name`,`numbe`) VALUES (:name,:number)");
     $r = $sth->execute(array('name' => $name, 'number' => $number));
+    } catch (PDOException $e) {
+        echo 'Подключение не удалось: ' . $e->getMessage();
+    }
     $dbh = null;
     $sth = null;
 }
