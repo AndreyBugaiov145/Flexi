@@ -27,7 +27,6 @@
         <li class="list-group-item"><a href="task12.php">task12</a></li>
         <li class="list-group-item"><a href="task13.php">task13</a></li>
         <li class="list-group-item"><a href="task14.php">task14</a></li>
-        <li class="list-group-item"><a href="task15.php">task15</a></li>
         <li class="list-group-item"><a href="task16.php">task16</a></li>
         <li class="list-group-item"><a href="task17.php">task17</a></li>
         <hr>
@@ -38,7 +37,7 @@
         <li class="list-group-item"><a href="task20.php">task20</a></li>
         <li class="list-group-item"><a href="task21.php">task21</a></li>
         <li class="list-group-item"><a href="task22.php">task22</a></li>
-        <li class="list-group-item"><a href="task23.php">task23</a></li>
+        <li class="list-group-item"><a href="task23.php">task23(см. консоль)</a></li>
         <li class="list-group-item"><a href="task24.php">task24</a></li>
         <li class="list-group-item"><a href="task25.php">task25</a></li>
         <li class="list-group-item"><a href="task26.php">task26</a></li>

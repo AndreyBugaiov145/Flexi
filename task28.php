@@ -94,18 +94,18 @@ if (isset($_POST['submit'])) {
         <div class="form-group form">
             <label >  Введите первую матрицу</label>
             <textarea name="matrix1" id="matrix1" cols="30" rows="10"
-                      class="form-control"><?= $_POST['matrix1'] ?></textarea>
+                      class="form-control"><?= isset($_POST['matrix1'])?$_POST['matrix1']:false ?></textarea>
         </div>
         <div class="form-group form">
             <label >  Введите вторую матрицу</label>
             <textarea name="matrix2" id="matrix2" cols="30" rows="10"
-                      class="form-control"><?= $_POST['matrix2'] ?></textarea>
+                      class="form-control"><?= isset($_POST['matrix2'])?$_POST['matrix2']:false  ?></textarea>
         </div>
         <input type="submit" name="submit" class="btn btn-success">
     </form>
     <div>
         <h3>Результат сложения матриц</h3>
-        <span><?= $str ?></span>
+        <span><?= isset($str)?$str:false ?></span>
     </div>
 </div>
 <a href="index.php " class="btn btn-info " style="position:absolute; right: 0;top:0;">Вернуться к списку заданий</a>
