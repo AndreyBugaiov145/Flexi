@@ -2,14 +2,12 @@
 require 'config.php';
 require 'bdConect.php';
 if (isset($_POST["submit"])) {
-    $fio = htmlspecialchars($_POST["fio"]);
-    $adres = htmlspecialchars($_POST["adres"]);
+    $fio = $_POST["fio"];
+    $adres = _POST["adres"];
     $books = $_POST["boock"];
-    $sth = $dbh->query("SELECT `auto_increment` FROM INFORMATION_SCHEMA.TABLES WHERE table_name = 'user_task33'");
-    $responsAutoIncrement = $sth->fetch(PDO::FETCH_ASSOC);
-    $autoIncrement = $responsAutoIncrement['auto_increment'];
     $sth = $dbh->prepare("INSERT INTO `user_task33`(`fio`,`adres`) VALUES (:fio,:adres)");
     $sth->execute(array('fio' => $fio, 'adres' => $adres));
+    $autoIncrement= $dbh->lastInsertId();
     foreach ($books as $book) {
         $book = htmlspecialchars($book);
         $sth = $dbh->prepare("INSERT INTO `book`( `user_id`, `books`) VALUES (:user_id,:books)");

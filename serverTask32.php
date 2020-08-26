@@ -10,11 +10,11 @@ if (preg_match('"[^0-9]"', $_POST["number"])) {
 }
 if (strlen($_POST['name']) < 5) {
     $status = true;
-    $err .= 'Имя должно содержать минимум 5 символов' . strlen($_POST['name']);
+    $err .= 'Имя должно содержать минимум 5 сейчас символов -' . strlen($_POST['name']);
 }
 if ($status) {
-    setcookie("TestCookie", $err);
-    header(' ', 'TRUE', '400');
+    header(' ', 'TRUE', '422');
+    echo $err;
 
 } else {
     setcookie("TestCookie", '', time() - 7);
@@ -22,8 +22,8 @@ if ($status) {
     $number = htmlspecialchars($_POST["number"]);
 
     try {
-    $sth = $dbh->prepare("INSERT INTO `task32`(`name`,`numbe`) VALUES (:name,:number)");
-    $r = $sth->execute(array('name' => $name, 'number' => $number));
+        $sth = $dbh->prepare("INSERT INTO `task32`(`name`,`numbe`) VALUES (:name,:number)");
+        $r = $sth->execute(array('name' => $name, 'number' => $number));
     } catch (PDOException $e) {
         echo 'Подключение не удалось: ' . $e->getMessage();
     }

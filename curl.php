@@ -1,9 +1,10 @@
 <?php
 if (isset($_GET['id'])) {
-    $chDelet = curl_init('http://3.testsite.co.ua/task32Api.php');
-    curl_setopt($chDelet, CURLOPT_POSTFIELDS, ['id' => $_GET['id']]);
-    $html = curl_exec($chDelet);
-    curl_close($chDelet);
+    $chDelete = curl_init('http://3.testsite.co.ua/task32Api.php');
+    curl_setopt($chDelete, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($chDelete, CURLOPT_POSTFIELDS, ['id' => $_GET['id']]);
+    $responsDelete = curl_exec($chDelete);
+    curl_close($chDelete);
 }
 $ch = curl_init('http://3.testsite.co.ua/task32Api.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -38,8 +39,12 @@ $respons = json_decode($respons);
             <?php endforeach; ?>
         </table>
     </div>
-    <a href="http://3.testsite.co.ua/ " class="btn btn-info " style="position:absolute; right: 0;top:400px;">Вернуться к списку
+    <a href="http://3.testsite.co.ua/ " class="btn btn-info " style="position:absolute; right: 0;top:400px;">Вернуться к
+        списку
         заданий</a>
     </body>
     </html>
+<? endif; ?>
+<? if (isset($responsDelete)): ?>
+    <script>alert("<?=$responsDelete?>")</script>
 <? endif; ?>

@@ -79,15 +79,7 @@
 
             },
             error: function (d_data) {
-                //console.log(d_data);
-                alert("Данные ввендены не корректно ");
-            },
-            complete: function (argument) {
-                if (document.cookie) {
-                    let mass = document.cookie.split(';');
-                    mass = mass[0].split('=');
-                    $('#err').removeClass('err').children().first().text(decodeURIComponent(mass[1]).replaceAll('+', ' '));
-                } else $('#err').removeClass('err').children().first().text('');
+                $('#err').removeClass('err').children().first().text(d_data['responseText']);
             },
             dataType: "text",
             timeOut: 1000,
